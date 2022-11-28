@@ -39,21 +39,23 @@ FGs = [
 
 
 
-# List of values to display with "friendly name"
-# seperate neseted json with  "|"
+# List of values to display with "friendly name" : "<json-key>"
+# seperate neseted json keys with  "|"
 # find struct in list of nested json : use search @key:value
 
-# WIFI-CLIENT-VALUES  list of fields
+# WIFI-CLIENT-VALUES  
 WCLV = {
     "ip":"ip",
-    "MAC":"mac",
-    "mino":"mimo",
+  #  "MAC":"mac",
+    "hostname":"hostname",
     "SNR-V":"health|snr|value",
     "SNR-S":"health|snr|severity",
     "strength-V":"health|signal_strength|value",
     "strength-S":"health|signal_strength|severity",
-    "am AP":"wtp_name",
-    "am AP ID":"wtp_id"
+    "band":"health|band|value",
+    "on AP name":"wtp_name",
+    "on AP ID":"wtp_id",
+    "mimo":"mimo"
     }
 
 # WIFI-AP-VALUES
@@ -83,7 +85,13 @@ INCLUDE_FG_NAME = True
 
 def apiGet(url,ACCESS_TOKEN):
     if ACCESS_TOKEN[0] == "@":
-        ACCESS_TOKEN = os.getenv(ACCESS_TOKEN[1:]).replace('\r', '')
+        env=ACCESS_TOKEN[1:]
+        if env in os.environ:
+            ACCESS_TOKEN = os.getenv(ACCESS_TOKEN[1:]).replace('\r', '')
+        else:
+            print(80*"=")
+            print("Error: Missing ACCESS_TOKEN in Environ")
+            sys.exit(1)
     headers = {'Authorization': f'Bearer {ACCESS_TOKEN}'}
     results = requests.get(url,headers=headers, verify=False)
     res=json.loads(results.text)
