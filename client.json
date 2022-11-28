@@ -1,0 +1,71 @@
+{
+    "ip": "192.168.0.26",
+    "ip6": [
+        "fe80::1092:55ad:d0e0:1a62"
+    ],
+    "wtp_name": "FAP-KG",
+    "wtp_id": "FP321E5H20003387",
+    "wtp_radio": 2,
+    "wtp_ip": "192.168.99.14",
+    "wtp_control_ip": "192.168.99.14",
+    "wtp_control_local_ip": "192.168.99.14",
+    "vap_name": "passiv5",
+    "ssid": "passiv5",
+    "mac": "56:88:1e:07:b7:0e",
+    "11k_capable": false,
+    "11v_capable": false,
+    "11r_capable": false,
+    "sta_maxrate": 866700,
+    "sta_rxrate": 866000,
+    "sta_rxrate_score": 99,
+    "sta_txrate": 866000,
+    "sta_txrate_score": 99,
+    "os": "iOS",
+    "hostname": "iPhone12",
+    "authentication": "pass",
+    "captive_portal_authenticated": 0,
+    "data_rate_bps": 1732000000,
+    "data_rxrate_bps": 866000000,
+    "data_txrate_bps": 866000000,
+    "snr": 52,
+    "idle_time": 6,
+    "association_time": 1669395829,
+    "bandwidth_tx": 0,
+    "bandwidth_rx": 0,
+    "lan_authenticated": false,
+    "channel": 40,
+    "signal": -43,
+    "vci": "",
+    "host": "",
+    "security": 10,
+    "security_str": "wpa2_only_personal",
+    "encrypt": 1,
+    "noise": -95,
+    "radio_type": "802.11ac",
+    "mimo": "2x2",
+    "vlan_id": 1,
+    "tx_discard_percentage": 0,
+    "tx_retry_percentage": 0,
+    "health": {
+        "signal_strength": {
+            "value": -43,
+            "severity": "good"
+        },
+        "snr": {
+            "value": 52,
+            "severity": "good"
+        },
+        "band": {
+            "value": "5ghz",
+            "severity": "good"
+        },
+        "transmission_retry": {
+            "value": 0,
+            "severity": "good"
+        },
+        "transmission_discard": {
+            "value": 0,
+            "severity": "good"
+        }
+    }
+}
